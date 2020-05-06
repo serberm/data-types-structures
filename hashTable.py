@@ -38,8 +38,10 @@ class HashTable():
 
     while self.keys[index] is not None:
       if self.keys[index] == key:
+        print('value found:  ', self.values[index])
         return self.values[index]
 
+      print('Re Hashing ......')
       index = (index+1) % self.size
 
     print('key is not present ....')
@@ -54,7 +56,11 @@ class HashTable():
 myTable = HashTable()
 myTable.put('pidr',10)
 myTable.put('gnida',20)
-myTable.put('pidr',30)
+myTable.put('rdip',30)
+myTable.put('drip',40)
+print('_______________')
+myTable.get('drip')
+
 myTable.printAll()
 
 
