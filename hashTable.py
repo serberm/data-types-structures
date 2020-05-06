@@ -1,5 +1,5 @@
 class HashTable():
-  def __init__(self, data):
+  def __init__(self):
     self.size = 10
     self.keys = [None] * self.size
     self.values = [None] * self.size
@@ -11,14 +11,17 @@ class HashTable():
     #not None -> it is a collision !!!!
     while self.keys[index] is not None:
       if self.keys[index] == key:
+        print('key already generated, updating ......')
         self.values[index] = data #update
         return
       
       #rehashing, trying to find another slot
       #this is linear probing
+      print('Re Hashing ......')
       index = (index+1) % self.size
     
     #insert
+    print('Inserting ......')
     self.keys[index] = key
     self.values[index] = data
 
@@ -39,7 +42,20 @@ class HashTable():
 
       index = (index+1) % self.size
 
+    print('key is not present ....')
     return None
+
+  def printAll(self):
+    print('keys ...')
+    print(self.keys)
+    print('values ...')
+    print(self.values)
+
+myTable = HashTable()
+myTable.put('pidr',10)
+myTable.put('gnida',20)
+myTable.put('pidr',30)
+myTable.printAll()
 
 
     
