@@ -43,7 +43,7 @@ class DijkstraAlgo:
     startVertex.minDistance = 0
     heapq.heappush(q, startVertex)
 
-    while len(q) > 0:
+    while q:
 
       #get vertex with smallest distance
       actualVertex = heapq.heappop(q)
