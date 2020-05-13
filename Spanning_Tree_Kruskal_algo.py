@@ -64,6 +64,7 @@ class DisJointSet:
     return root.nodeId
 
   def merge(self, node1, node2):
+    #getting roots/representators of this nodes
     index1 = self.find(node1)
     index2 = self.find(node2)
 
